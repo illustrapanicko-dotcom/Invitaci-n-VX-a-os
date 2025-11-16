@@ -657,3 +657,251 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* =========================
+   FOOTER PANTALLA COMPLETA
+   ========================= */
+
+.page-footer {
+  position: relative;
+  height: 100vh;              /* Ocupa toda la pantalla */
+  width: 100%;
+  margin: 0;
+  padding: 0 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* Imagen de fondo */
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.10) 0%,
+      rgba(0, 0, 0, 0.40) 40%,
+      rgba(0, 0, 0, 0.75) 100%
+    ),
+    url("rsc/cab2.jpg");       /* Asegúrate que este archivo exista en /rsc */
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  box-shadow:
+    inset 0 60px 120px rgba(0, 0, 0, 0.55),
+    inset 0 -60px 120px rgba(0, 0, 0, 0.55);
+}
+
+
+.footer-text {
+  display: inline-block;
+  padding: 1.4rem 3rem;
+
+  /* Estilo elegante */
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+
+  /* Color + brillo plata */
+  color: var(--color-silver-main);
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(255, 255, 255, 0.15);
+
+  /* Fondo elegante */
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.45),
+    inset 0 0 10px rgba(255, 255, 255, 0.08);
+
+  /* Animación suave */
+  animation: footerFade 1.2s ease forwards;
+}
+
+.footer-text::before {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 1.7px;
+  margin: 0 auto 1rem auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-silver-main),
+    transparent
+  );
+  opacity: 0.9;
+}
+
+@keyframes footerFade {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================
+   SEPARADOR ELEGANTE ENTRE SECCIONES
+   ========================= */
+
+.section-separator {
+  width: 100%;
+  height: 70px;  /* altura del separador */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5rem 0;
+  position: relative;
+}
+
+.section-separator::before {
+  content: "";
+  width: 70%;
+  max-width: 320px;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-silver-main),
+    transparent
+  );
+
+  opacity: 0.8;
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+/* Pequeño adorno al centro */
+.section-separator::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--color-silver-main),
+    #ffffff88,
+    #ffffff22
+  );
+  position: absolute;
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.5),
+    0 0 16px rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================
+   FONDOS CON PROFUNDIDAD (LUCES SUAVES)
+   Aplicado a todas las secciones de contenido
+   ========================================= */
+
+.details-section,
+.info-section,
+.schedule-section,
+.locations-section,
+.album-section {
+  position: relative;
+  overflow: hidden;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+/* Luz suave arriba-izquierda (plateada) */
+.details-section::before,
+.info-section::before,
+.schedule-section::before,
+.locations-section::before,
+.album-section::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: -180px;
+  left: -140px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.22) 0%,
+    rgba(255, 255, 255, 0.05) 35%,
+    transparent 70%
+  );
+  opacity: 0.35;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+/* Luz suave abajo-derecha (rojo vino) */
+.details-section::after,
+.info-section::after,
+.schedule-section::after,
+.locations-section::after,
+.album-section::after {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  bottom: -220px;
+  right: -160px;
+  background: radial-gradient(
+    circle,
+    rgba(177, 18, 38, 0.55) 0%,
+    rgba(177, 18, 38, 0.08) 40%,
+    transparent 75%
+  );
+  opacity: 0.45;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+/* Ajustamos fondos base de cada sección para combinar con las luces */
+.details-section {
+  background: radial-gradient(circle at top,
+    #2b0208 0%,
+    #120205 45%,
+    #060104 100%
+  );
+}
+
+.info-section {
+  background: radial-gradient(circle at center,
+    #32020a 0%,
+    #140207 45%,
+    #050104 100%
+  );
+}
+
+.schedule-section {
+  background: linear-gradient(
+    180deg,
+    #22030c 0%,
+    #100207 45%,
+    #050104 100%
+  );
+}
+
+.locations-section {
+  background: radial-gradient(circle at top,
+    #2a0210 0%,
+    #120207 45%,
+    #040104 100%
+  );
+}
+
+.album-section {
+  background: radial-gradient(circle at bottom,
+    #3a020c 0%,
+    #150208 45%,
+    #050104 100%
+  );
+}

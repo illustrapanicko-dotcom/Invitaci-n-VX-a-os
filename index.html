@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invitación XV Años - Alejandra Valentina</title>
 
-  <!-- Fuentes (opcional) -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -75,6 +75,9 @@
       </div>
     </section>
 
+    <!-- SEPARADOR 1 -->
+    <div class="section-separator"></div>
+
     <!-- SECCIÓN 2: MENSAJE PRINCIPAL + DATOS -->
     <section id="detalles" class="details-section reveal">
       <div class="details-inner">
@@ -105,6 +108,9 @@
         </div>
       </div>
     </section>
+
+    <!-- SEPARADOR 2 -->
+    <div class="section-separator"></div>
 
     <!-- SECCIÓN 3: PADRES, PADRINOS, VESTIMENTA, LLUVIA DE SOBRES -->
     <section id="info-general" class="info-section reveal">
@@ -157,6 +163,9 @@
         </div>
       </div>
     </section>
+
+    <!-- SEPARADOR 3 -->
+    <div class="section-separator"></div>
 
     <!-- SECCIÓN 4: ITINERARIO + RETO DE FOTOS -->
     <section id="itinerario" class="schedule-section reveal">
@@ -249,6 +258,9 @@
       </div>
     </section>
 
+    <!-- SEPARADOR 4 -->
+    <div class="section-separator"></div>
+
     <!-- SECCIÓN 5: UBICACIONES -->
     <section id="ubicaciones" class="locations-section reveal">
       <div class="section-inner">
@@ -267,7 +279,7 @@
               56617 Valle de Chalco Solidaridad, Méx.
             </p>
             <a
-              href="#"
+              href="https://www.google.com/maps/place/Parroquia+de+San+Jos%C3%A9/@19.3013096,-98.9345322,17z/data=!4m10!1m2!2m1!1sParroquia+de+San+Jos%C3%A9!3m6!1s0x85ce1c2d4ed05da9:0x29a1146e461cc4fc!8m2!3d19.3012503!4d-98.9345699!15sChZQYXJyb3F1aWEgZGUgU2FuIEpvc8OpWhgiFnBhcnJvcXVpYSBkZSBzYW4gam9zw6mSAQ9jYXRob2xpY19jaHVyY2iaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTnRkRWwyUjJsQlJSQUKqAVoQASoaIhZwYXJyb3F1aWEgZGUgc2FuIGpvc8OpKA4yHhABIhrnSmNZpRm-7pc001Q2F1smyxcT0PlX-FwykDIaEAIiFnBhcnJvcXVpYSBkZSBzYW4gam9zw6ngAQD6AQQIABBD!16s%2Fg%2F11b6qztlm5?hl=en&entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               class="btn-link"
             >
@@ -284,7 +296,7 @@
               Valle de Chalco, Méx.
             </p>
             <a
-              href="#"
+              href="https://www.google.com/maps/place//@19.3010674,-98.9411583,17z/data=!4m6!1m5!3m4!2zMTnCsDE4JzAzLjgiTiA5OMKwNTYnMTguOSJX!8m2!3d19.3010674!4d-98.9385834?hl=en&entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               class="btn-link"
             >
@@ -294,6 +306,9 @@
         </div>
       </div>
     </section>
+
+    <!-- SEPARADOR 5 -->
+    <div class="section-separator"></div>
 
     <!-- SECCIÓN 6: ÁLBUM DIGITAL + HASHTAG + CONFIRMACIÓN -->
     <section id="album-rsvp" class="album-section reveal">
@@ -355,6 +370,9 @@
       </div>
     </section>
 
+    <!-- SEPARADOR 6 -->
+    <div class="section-separator"></div>
+
     <!-- FOOTER / CIERRE -->
     <footer class="page-footer reveal">
       <p class="footer-text">
@@ -364,7 +382,7 @@
 
   </main>
 
-  <!-- SCRIPT: CONTADOR + MÚSICA -->
+  <!-- SCRIPT: CONTADOR + MÚSICA + REVEAL -->
   <script>
     const eventDate = new Date("2025-12-20T15:30:00");
 
@@ -446,17 +464,16 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("reveal-visible");
-            obs.unobserve(entry.target); // ya no lo vuelve a animar
+            obs.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.2 // se activa cuando el 20% del elemento es visible
+        threshold: 0.2
       }
     );
 
     revealElements.forEach(el => observer.observe(el));
-
   </script>
 </body>
 </html>
