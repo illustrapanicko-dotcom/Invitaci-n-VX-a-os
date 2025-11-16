@@ -19,6 +19,13 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div id="welcome-overlay" class="welcome-overlay">
+    <div class="welcome-box">
+      <p class="welcome-text">Toca para entrar a la invitación</p>
+      <button id="enter-btn" class="welcome-btn">Entrar</button>
+    </div>
+  </div>
+
   <main>
 
     <!-- BOTÓN / CONTROL DE MÚSICA -->
@@ -519,6 +526,21 @@
       document.removeEventListener("touchstart", firstInteraction);
       document.removeEventListener("scroll", firstInteraction);
     }
+
+
+    const enterBtn = document.getElementById("enter-btn");
+const welcomeOverlay = document.getElementById("welcome-overlay");
+
+enterBtn.addEventListener("click", () => {
+
+  audio.play().then(() => {
+    isPlaying = true;
+    musicBtn.classList.add("active");
+  });
+
+  welcomeOverlay.style.opacity = "0";
+  setTimeout(() => welcomeOverlay.style.display = "none", 500);
+});
 
 
   </script>
