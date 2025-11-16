@@ -71,6 +71,46 @@ body {
   line-height: 1.6;
 }
 
+/* Decoradores para subtítulos: líneas sutiles arriba/abajo centradas */
+.section-subtitle {
+  position: relative;
+  padding: 0.6rem 0; /* espacio para las líneas decorativas */
+}
+
+.section-subtitle::before,
+.section-subtitle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--color-silver-main), transparent);
+  opacity: 0.85;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.section-subtitle::before {
+  top: 0; /* línea superior justo encima del texto */
+  transform: translateX(-50%) translateY(-12px);
+}
+
+.section-subtitle::after {
+  bottom: 0; /* línea inferior justo debajo del texto */
+  transform: translateX(-50%) translateY(12px);
+}
+
+/* Variante: subtítulos más ornamentados (añade un pequeño rombo central) */
+.section-subtitle.ornamented::after {
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--color-silver-main), transparent), radial-gradient(circle at center, var(--color-silver-main) 0 4px, transparent 5px);
+  background-repeat: no-repeat;
+  background-size: 100% 3px, 10px 10px;
+  background-position: center, center calc(100% + 8px);
+}
+
 .section-text {
   font-size: 0.98rem;
   line-height: 1.7;
@@ -219,7 +259,7 @@ body {
 
 .hero-title {
   font-family: "Notable", sans-serif;
-  font-size: clamp(3.2rem, 7vw, 5rem); /* MUCHÍSIMO MÁS GRANDE */
+  font-size: clamp(2.8rem, 3vw, 5rem); /* MUCHÍSIMO MÁS GRANDE */
   font-weight: 400;
   color: var(--color-silver-main);
 

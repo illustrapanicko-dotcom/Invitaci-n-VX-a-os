@@ -383,9 +383,6 @@
               Favor de confirmar tu asistencia antes del
               <strong>10 de diciembre de 2025</strong>.
             </p>
-            <p class="card-text">
-              Teléfono: <strong>5616376328</strong>
-            </p>
             <a
               href="https://wa.me/525616376328?text=Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Alejandra%20Valentina"
               target="_blank"
@@ -502,6 +499,24 @@
     );
 
     revealElements.forEach(el => observer.observe(el));
+
+    // 🔥 AUTO-PLAY TRUCO: Inicia la música con el primer toque en pantalla
+    document.addEventListener("click", firstInteraction);
+    document.addEventListener("touchstart", firstInteraction);
+
+    function firstInteraction() {
+      if (!isPlaying) {
+        audio.play().then(() => {
+          isPlaying = true;
+          musicBtn.classList.add("active");
+        }).catch(() => {});
+      }
+
+      // Evita que vuelva a intentar iniciar muchas veces
+      document.removeEventListener("click", firstInteraction);
+      document.removeEventListener("touchstart", firstInteraction);
+    }
+
   </script>
 </body>
 </html>
