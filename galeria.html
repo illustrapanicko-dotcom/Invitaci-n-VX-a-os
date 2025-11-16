@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería de fotos - XV Alejandra Valentina</title>
+
+  <!-- Tus fuentes y estilos globales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Fondo similar al estilo general */
+    body {
+      background: radial-gradient(circle at top, #90122a 0%, #530818 45%, #26030b 100%);
+      color: var(--color-text-primary);
+    }
+
+    .gallery-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-hero {
+      padding-top: 3.5rem;
+    }
+
+    .gallery-hero .section-inner {
+      text-align: center;
+    }
+
+    .gallery-intro {
+      font-size: 0.98rem;
+      max-width: 600px;
+      margin: 0.6rem auto 1.8rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    .gallery-upload-note {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.6rem;
+    }
+
+    .gallery-view {
+      padding-bottom: 3rem;
+    }
+
+    .gallery-frame-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 1.6rem;
+      overflow: hidden;
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: radial-gradient(circle at top, #ffeded20 0%, #000000cc 50%);
+      backdrop-filter: blur(8px);
+    }
+
+    .gallery-frame {
+      width: 100%;
+      height: 70vh;
+      border: none;
+      display: block;
+      background-color: #000;
+    }
+
+    .gallery-subtitle {
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-silver-soft);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-frame {
+        height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="gallery-page">
+
+    <!-- INTRO -->
+    <section class="gallery-hero">
+      <div class="section-inner">
+        <h1 class="section-title">Álbum digital</h1>
+
+        <p class="gallery-intro">
+          Aquí podrás ver, descargar y compartir las fotos de esta noche tan especial.
+          También puedes subir tus mejores momentos para que aparezcan en el álbum.
+        </p>
+
+        <!-- BOTÓN SUBIR -->
+        <a
+          href="https://drive.google.com/drive/folders/17GgXaW6MIO1d8PbOpz-bUMige6F6SSpT?usp=sharing"
+          target="_blank"
+          class="btn-link"
+        >
+          Subir mis fotos al álbum
+        </a>
+
+        <p class="gallery-upload-note">
+          Se abrirá una carpeta de Google Drive.<br>
+          Solo inicia sesión con tu cuenta y arrastra tus fotos.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALERÍA EMBEBIDA -->
+    <section class="gallery-view">
+      <div class="section-inner">
+        <p class="gallery-subtitle">Fotos del evento</p>
+
+        <div class="gallery-frame-wrapper">
+          <iframe
+            class="gallery-frame"
+            loading="lazy"
+            src="https://drive.google.com/embeddedfolderview?id=17GgXaW6MIO1d8PbOpz-bUMige6F6SSpT#grid"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
