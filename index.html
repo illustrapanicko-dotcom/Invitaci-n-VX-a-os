@@ -26,9 +26,10 @@
       🎵
     </button>
 
-    <audio id="bg-music" loop>
+   <audio id="bg-music" preload="auto" playsinline loop>
       <source src="rsc/musica.mp3" type="audio/mpeg">
     </audio>
+
 
     <!-- SECCIÓN 1: HERO / PORTADA -->
     <section class="hero" id="inicio">
@@ -500,9 +501,10 @@
 
     revealElements.forEach(el => observer.observe(el));
 
-    // 🔥 AUTO-PLAY TRUCO: Inicia la música con el primer toque en pantalla
+   // 🔥 AUTO-PLAY DEFINITIVO: click, touch y scroll
     document.addEventListener("click", firstInteraction);
     document.addEventListener("touchstart", firstInteraction);
+    document.addEventListener("scroll", firstInteraction);
 
     function firstInteraction() {
       if (!isPlaying) {
@@ -512,10 +514,12 @@
         }).catch(() => {});
       }
 
-      // Evita que vuelva a intentar iniciar muchas veces
+      // Evita que vuelva a intentar
       document.removeEventListener("click", firstInteraction);
       document.removeEventListener("touchstart", firstInteraction);
+      document.removeEventListener("scroll", firstInteraction);
     }
+
 
   </script>
 </body>
