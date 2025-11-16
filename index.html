@@ -12,12 +12,21 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
-  
+
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main>
+
+    <button id="music-btn" class="music-button">
+      🎵
+    </button>
+
+    <audio id="bg-music" loop>
+      <source src="rsc/musica.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- SECCIÓN 1: HERO / PORTADA -->
     <section class="hero" id="inicio">
       <div class="hero-inner">
@@ -149,6 +158,23 @@
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  const audio = document.getElementById("bg-music");
+  const musicBtn = document.getElementById("music-btn");
+
+  let isPlaying = false;
+
+  musicBtn.addEventListener("click", () => {
+    if (!isPlaying) {
+      audio.play();
+      isPlaying = true;
+      musicBtn.classList.add("active");
+    } else {
+      audio.pause();
+      isPlaying = false;
+      musicBtn.classList.remove("active");
+    }
+  });
 </script>
 
 </body>
