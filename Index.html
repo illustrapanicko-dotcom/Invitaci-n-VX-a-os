@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación XV Años - Alejandra Valentina</title>
+
+  <!-- Fuentes (opcional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <!-- SECCIÓN 1: HERO / PORTADA -->
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <div class="hero-tagline animated-tagline">
+            <img src="rsc/xv.png" alt="Mis XV Años" class="hero-tagline-img" />
+        </div>
+        <h1 class="hero-title animated-title">Alejandra Valentina</h1>
+
+        <p class="hero-date">20 de diciembre de 2025 · Valle de Chalco, Méx.</p>
+
+        <!-- CONTADOR REGRESIVO -->
+        <div class="countdown" aria-label="Cuenta regresiva para el evento">
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-days">00</span>
+            <span class="countdown-label">Días</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-hours">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-minutes">00</span>
+            <span class="countdown-label">Min</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="cd-seconds">00</span>
+            <span class="countdown-label">Seg</span>
+          </div>
+        </div>
+
+        <a href="#detalles" class="hero-cta">
+          Ver detalles del evento
+        </a>
+      </div>
+
+      <div class="hero-scroll">
+        <span>Desliza para continuar</span>
+        <div class="hero-scroll-indicator"></div>
+      </div>
+    </section>
+
+    <section id="detalles" class="details-section">
+        <div class="details-inner">
+            <!-- Mensaje principal -->
+            <div class="details-message">
+            <h2 class="details-title">Una noche para recordar</h2>
+            <p class="details-text">
+                Mis XV años son una ocasión especial que merece ser celebrada en compañía de
+                familiares y amigos. Los espero para festejar y hacer de esta noche una experiencia
+                inolvidable.
+            </p>
+            </div>
+
+            <!-- Datos rápidos del evento -->
+            <div class="details-summary">
+            <div class="details-item">
+                <span class="details-label">Quinceañera</span>
+                <span class="details-value">Alejandra Valentina</span>
+            </div>
+            <div class="details-item">
+                <span class="details-label">Fecha</span>
+                <span class="details-value">20 de diciembre de 2025</span>
+            </div>
+            <div class="details-item">
+                <span class="details-label">Lugar</span>
+                <span class="details-value">Valle de Chalco, Méx.</span>
+            </div>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <!-- SCRIPT DEL CONTADOR -->
+<script>
+  const eventDate = new Date("2025-12-20T15:30:00");
+
+  const daysEl = document.getElementById("cd-days");
+  const hoursEl = document.getElementById("cd-hours");
+  const minutesEl = document.getElementById("cd-minutes");
+  const secondsEl = document.getElementById("cd-seconds");
+
+  function animateChange(element, newValue) {
+    if (element.textContent === newValue) return;
+
+    element.classList.remove("animate-in");
+    element.classList.add("animate-out");
+
+    setTimeout(() => {
+      element.textContent = newValue;
+      element.classList.remove("animate-out");
+      element.classList.add("animate-in");
+    }, 250);
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = eventDate - now;
+
+    if (diff <= 0) {
+      daysEl.textContent = "00";
+      hoursEl.textContent = "00";
+      minutesEl.textContent = "00";
+      secondsEl.textContent = "00";
+      return;
+    }
+
+    const totalSeconds = Math.floor(diff / 1000);
+    const totalMinutes = Math.floor(totalSeconds / 60);
+    const totalHours   = Math.floor(totalMinutes / 60);
+    const days = Math.floor(totalHours / 24);
+
+    const hours = totalHours % 24;
+    const minutes = totalMinutes % 60;
+    const seconds = totalSeconds % 60;
+
+    const d = String(days).padStart(2, "0");
+    const h = String(hours).padStart(2, "0");
+    const m = String(minutes).padStart(2, "0");
+    const s = String(seconds).padStart(2, "0");
+
+    animateChange(daysEl, d);
+    animateChange(hoursEl, h);
+    animateChange(minutesEl, m);
+    animateChange(secondsEl, s);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
+
