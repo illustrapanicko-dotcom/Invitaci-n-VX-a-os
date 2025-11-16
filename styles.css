@@ -38,6 +38,98 @@ body {
   min-height: 100vh;
 }
 
+/* Elementos reutilizables */
+
+.section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+.section-title {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: var(--color-silver-main);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.section-text {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Tarjetas reutilizables */
+
+.card {
+  padding: 1.6rem 1.5rem;
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.06) 0%, rgba(7,3,5,0.96) 55%, rgba(5,2,4,0.98) 100%);
+  border: 1px solid rgba(208, 213, 229, 0.25);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+}
+
+.card-title {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  color: var(--color-silver-main);
+}
+
+.card-title-secondary {
+  margin-top: 1.4rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.6rem;
+}
+
+.card-text strong {
+  color: var(--color-text-primary);
+}
+
+/* Botón / link reutilizable */
+
+.btn-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background-image: linear-gradient(135deg, #f5f5f7, var(--color-silver-main));
+  color: var(--color-red-deep);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.18s ease;
+}
+
+.btn-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.55);
+  background-image: linear-gradient(135deg, var(--color-silver-soft), #f5f5f7);
+  color: var(--color-red-accent);
+}
+
 /* =========================
    SECCIÓN HERO / PORTADA
    ========================= */
@@ -51,8 +143,6 @@ body {
   text-align: center;
   padding: 2rem 1.5rem 4rem;
   color: var(--color-text-primary);
-
-  /* Imagen de fondo + degradado hacia abajo */
   background-image:
     linear-gradient(
       to bottom,
@@ -166,11 +256,6 @@ body {
   100% { opacity: 0.3; transform: translateY(0); }
 }
 
-#detalles {
-  min-height: 50vh;
-  background-color: #0b0506;
-}
-
 /* =========================
    CONTADOR REGRESIVO HERO
    ========================= */
@@ -201,6 +286,27 @@ body {
   font-weight: 700;
   color: var(--color-silver-main);
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+  min-width: 32px;
+  text-align: center;
+}
+
+/* Animación del número del contador */
+.animate-in {
+  animation: fadeInUp 0.45s ease both;
+}
+
+.animate-out {
+  animation: fadeOutDown 0.45s ease both;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOutDown {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
 }
 
 .countdown-label {
@@ -221,7 +327,6 @@ body {
    ANIMACIONES DEL HERO
    ========================= */
 
-/* Animación para el logo MIS XV AÑOS */
 .animated-tagline {
   display: inline-block;
   opacity: 0;
@@ -229,7 +334,6 @@ body {
   animation-delay: 0.2s;
 }
 
-/* Animación para el nombre */
 .animated-title {
   opacity: 0;
   transform: translateY(15px);
@@ -237,7 +341,6 @@ body {
   animation-delay: 0.6s;
 }
 
-/* Animaciones */
 @keyframes taglineFade {
   0% { opacity: 0; transform: translateY(-15px) scale(0.92); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
@@ -248,44 +351,28 @@ body {
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-
 /* =========================
    SECCIÓN 2: DETALLES
    ========================= */
 
 .details-section {
   background: radial-gradient(circle at top, #1a0508 0%, #080305 55%, #050204 100%);
-  padding: 3.5rem 1.5rem 4rem;
   color: var(--color-text-primary);
 }
 
 .details-inner {
   max-width: 900px;
   margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
 }
 
-/* Mensaje principal */
 .details-message {
   text-align: center;
   margin-bottom: 2.5rem;
 }
 
-.details-title {
-  font-family: "Playfair Display", "Times New Roman", serif;
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
-  margin-bottom: 1rem;
-  color: var(--color-silver-main);
-}
-
-.details-text {
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: var(--color-text-secondary);
-  max-width: 640px;
-  margin: 0 auto;
-}
-
 /* Datos rápidos */
+
 .details-summary {
   display: grid;
   grid-template-columns: 1fr;
@@ -318,7 +405,6 @@ body {
   color: var(--color-text-primary);
 }
 
-/* En pantallas medianas en adelante, acomodar en 3 columnas */
 @media (min-width: 640px) {
   .details-summary {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -329,6 +415,194 @@ body {
   }
 }
 
+/* =========================
+   SECCIÓN 3: INFO GENERAL
+   ========================= */
+
+.info-section {
+  background: radial-gradient(circle at top, #160308 0%, #080305 55%, #050204 100%);
+  color: var(--color-text-primary);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.info-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0.2rem;
+}
+
+.info-list li {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.highlight-red {
+  margin-top: 0.4rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(177, 18, 38, 0.55);
+  background: radial-gradient(circle at left, rgba(177, 18, 38, 0.38) 0%, rgba(5, 2, 4, 0.96) 60%);
+  color: var(--color-text-primary);
+}
+
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: 2fr 1.2fr 1.2fr;
+    align-items: flex-start;
+  }
+
+  .card {
+    height: 100%;
+  }
+}
+
+/* =========================
+   SECCIÓN 4: ITINERARIO
+   ========================= */
+
+.schedule-section {
+  background: radial-gradient(circle at top, #1a0508 0%, #080305 55%, #050204 100%);
+  color: var(--color-text-primary);
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+}
+
+/* Timeline */
+
+.timeline {
+  border-left: 2px solid rgba(208, 213, 229, 0.35);
+  padding-left: 1.5rem;
+  margin-left: 0.4rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 0.15rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-silver-main);
+  box-shadow: 0 0 0 4px rgba(208,213,229,0.2);
+}
+
+.timeline-time {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-silver-soft);
+  margin-bottom: 0.1rem;
+}
+
+.timeline-content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+  color: var(--color-text-primary);
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+/* Reto de fotos */
+
+.card-emphasis {
+  border-color: rgba(208, 213, 229, 0.5);
+  background: radial-gradient(circle at top, rgba(255,255,255,0.09) 0%, rgba(7,3,5,1) 60%);
+}
+
+@media (min-width: 900px) {
+  .schedule-grid {
+    grid-template-columns: 2fr 1.4fr;
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+   SECCIÓN 5: UBICACIONES
+   ========================= */
+
+.locations-section {
+  background: radial-gradient(circle at top, #120207 0%, #070305 55%, #040103 100%);
+  color: var(--color-text-primary);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .locations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   SECCIÓN 6: ÁLBUM + RSVP
+   ========================= */
+
+.album-section {
+  background: radial-gradient(circle at top, #1a0508 0%, #080305 55%, #050204 100%);
+  color: var(--color-text-primary);
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.hashtag {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-silver-main);
+}
+
+.small-note {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 900px) {
+  .album-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.page-footer {
+  background: #050204;
+  padding: 1.5rem 1rem 2rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+}
 
 /* =========================
    BOTÓN DE MÚSICA
@@ -360,9 +634,26 @@ body {
   color: var(--color-red-accent);
 }
 
-/* Cuando la música está sonando */
 .music-button.active {
   background: var(--color-red-deep);
   color: var(--color-silver-main);
   box-shadow: 0 5px 25px rgba(122,0,18,0.55);
+}
+
+
+/* =========================
+   EFECTO REVEAL POR SCROLL
+   ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

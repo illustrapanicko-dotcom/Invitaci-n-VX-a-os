@@ -13,12 +13,12 @@
     rel="stylesheet"
   />
 
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main>
 
+    <!-- BOTÓN / CONTROL DE MÚSICA -->
     <button id="music-btn" class="music-button">
       🎵
     </button>
@@ -31,8 +31,9 @@
     <section class="hero" id="inicio">
       <div class="hero-inner">
         <div class="hero-tagline animated-tagline">
-            <img src="rsc/xv.png" alt="Mis XV Años" class="hero-tagline-img" />
+          <img src="rsc/xv.png" alt="Mis XV Años" class="hero-tagline-img" />
         </div>
+
         <h1 class="hero-title animated-title">Alejandra Valentina</h1>
 
         <p class="hero-date">20 de diciembre de 2025 · Valle de Chalco, Méx.</p>
@@ -44,15 +45,19 @@
             <span class="countdown-label">Días</span>
           </div>
           <div class="countdown-separator">:</div>
+
           <div class="countdown-item">
             <span class="countdown-number" id="cd-hours">00</span>
             <span class="countdown-label">Horas</span>
           </div>
           <div class="countdown-separator">:</div>
+
           <div class="countdown-item">
             <span class="countdown-number" id="cd-minutes">00</span>
             <span class="countdown-label">Min</span>
           </div>
+          <div class="countdown-separator">:</div>
+
           <div class="countdown-item">
             <span class="countdown-number" id="cd-seconds">00</span>
             <span class="countdown-label">Seg</span>
@@ -70,113 +75,388 @@
       </div>
     </section>
 
-    <section id="detalles" class="details-section">
-        <div class="details-inner">
-            <!-- Mensaje principal -->
-            <div class="details-message">
-            <h2 class="details-title">Una noche para recordar</h2>
-            <p class="details-text">
-                Mis XV años son una ocasión especial que merece ser celebrada en compañía de
-                familiares y amigos. Los espero para festejar y hacer de esta noche una experiencia
-                inolvidable.
+    <!-- SECCIÓN 2: MENSAJE PRINCIPAL + DATOS -->
+    <section id="detalles" class="details-section reveal">
+      <div class="details-inner">
+        <!-- Mensaje principal -->
+        <div class="details-message">
+          <h2 class="section-title">Una noche para recordar</h2>
+          <p class="section-text">
+            Mis XV años son una ocasión especial que merece ser celebrada en compañía de
+            familiares y amigos. Los espero para festejar y hacer de esta noche una experiencia
+            inolvidable.
+          </p>
+        </div>
+
+        <!-- Datos rápidos -->
+        <div class="details-summary">
+          <div class="details-item">
+            <span class="details-label">Quinceañera</span>
+            <span class="details-value">Alejandra Valentina</span>
+          </div>
+          <div class="details-item">
+            <span class="details-label">Fecha</span>
+            <span class="details-value">20 de diciembre de 2025</span>
+          </div>
+          <div class="details-item">
+            <span class="details-label">Lugar</span>
+            <span class="details-value">Valle de Chalco, Méx.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: PADRES, PADRINOS, VESTIMENTA, LLUVIA DE SOBRES -->
+    <section id="info-general" class="info-section reveal">
+      <div class="section-inner">
+        <h2 class="section-title">Con mucho amor, junto a mi familia</h2>
+        <p class="section-subtitle">
+          Acompañada por mis padres, padrinos y todos ustedes, deseo compartir una noche llena de recuerdos inolvidables.
+        </p>
+
+        <div class="info-grid">
+          <!-- Padres y padrinos -->
+          <article class="card">
+            <h3 class="card-title">Padres</h3>
+            <ul class="info-list">
+              <li>Massiel Karina García Quintanilla</li>
+              <li>María Concepción Quintanilla Ramírez</li>
+              <li>Sergio García Márquez</li>
+            </ul>
+
+            <h3 class="card-title card-title-secondary">Padrinos</h3>
+            <ul class="info-list">
+              <li>Mayra García Quintanilla</li>
+              <li>Oscar Hernández Martínez</li>
+            </ul>
+          </article>
+
+          <!-- Código de vestimenta -->
+          <article class="card">
+            <h3 class="card-title">Código de vestimenta</h3>
+            <p class="card-text">
+              La ocasión merece un toque elegante. Te invitamos a asistir con
+              <strong>vestimenta formal</strong>.
             </p>
+            <p class="card-text highlight-red">
+              El color <strong>ROJO</strong> está reservado exclusivamente para la quinceañera.
+            </p>
+          </article>
+
+          <!-- Lluvia de sobres -->
+          <article class="card">
+            <h3 class="card-title">Lluvia de sobres</h3>
+            <p class="card-text">
+              En el evento habrá un buzón destinado para los sobres.
+            </p>
+            <p class="card-text">
+              Mi mayor regalo será tu compañía, pero si deseas contribuir,
+              estaremos muy agradecidos con tu apoyo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: ITINERARIO + RETO DE FOTOS -->
+    <section id="itinerario" class="schedule-section reveal">
+      <div class="section-inner">
+        <h2 class="section-title">Itinerario del evento</h2>
+        <p class="section-subtitle">
+          Te comparto los momentos más importantes de esta noche especial.
+        </p>
+
+        <div class="schedule-grid">
+          <!-- Timeline -->
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">3:30 pm</div>
+              <div class="timeline-content">
+                <h3>Ceremonia</h3>
+                <p>Misa de acción de gracias.</p>
+              </div>
             </div>
 
-            <!-- Datos rápidos del evento -->
-            <div class="details-summary">
-            <div class="details-item">
-                <span class="details-label">Quinceañera</span>
-                <span class="details-value">Alejandra Valentina</span>
+            <div class="timeline-item">
+              <div class="timeline-time">5:30 pm</div>
+              <div class="timeline-content">
+                <h3>Recepción</h3>
+                <p>Bienvenida a los invitados en el salón.</p>
+              </div>
             </div>
-            <div class="details-item">
-                <span class="details-label">Fecha</span>
-                <span class="details-value">20 de diciembre de 2025</span>
+
+            <div class="timeline-item">
+              <div class="timeline-time">6:00 pm</div>
+              <div class="timeline-content">
+                <h3>Comida</h3>
+                <p>Disfrutemos juntos de una deliciosa cena.</p>
+              </div>
             </div>
-            <div class="details-item">
-                <span class="details-label">Lugar</span>
-                <span class="details-value">Valle de Chalco, Méx.</span>
+
+            <div class="timeline-item">
+              <div class="timeline-time">8:00 pm</div>
+              <div class="timeline-content">
+                <h3>Mesa de dulces</h3>
+                <p>Un rincón dulce para todos los invitados.</p>
+              </div>
             </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">8:15 pm</div>
+              <div class="timeline-content">
+                <h3>Reto de fotos</h3>
+                <p>¡A posar con todos los invitados!</p>
+              </div>
             </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">9:00 pm</div>
+              <div class="timeline-content">
+                <h3>Vals</h3>
+                <p>Un momento muy especial para recordar siempre.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">10:30 pm</div>
+              <div class="timeline-content">
+                <h3>Baile</h3>
+                <p>Que comience la fiesta.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">4:00 am</div>
+              <div class="timeline-content">
+                <h3>Fin del evento</h3>
+                <p>Gracias por ser parte de esta noche inolvidable.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reto de fotos -->
+          <article class="card card-emphasis">
+            <h3 class="card-title">Reto de fotos en 2:45 min</h3>
+            <p class="card-text">
+              Al sonar la canción <strong>“Bad Reputation”</strong>, la quinceañera, su corte de honor
+              y el fotógrafo pasarán mesa por mesa para tomarse fotos con todos los invitados.
+            </p>
+            <p class="card-text">
+              En tan solo <strong>2:45 minutos</strong>, saca tu mejor pose y sonríe. 📸
+            </p>
+          </article>
         </div>
+      </div>
     </section>
+
+    <!-- SECCIÓN 5: UBICACIONES -->
+    <section id="ubicaciones" class="locations-section reveal">
+      <div class="section-inner">
+        <h2 class="section-title">Ubicaciones</h2>
+        <p class="section-subtitle">
+          Da clic en cada ubicación para abrirla en Google Maps.
+        </p>
+
+        <div class="locations-grid">
+          <!-- Misa -->
+          <article class="card">
+            <h3 class="card-title">Ceremonia religiosa</h3>
+            <p class="card-text">
+              <strong>Parroquia San José</strong><br />
+              Av. Ricardo Flores Magón Manzana 005, Independencia,<br />
+              56617 Valle de Chalco Solidaridad, Méx.
+            </p>
+            <a
+              href="#"
+              target="_blank"
+              class="btn-link"
+            >
+              Ver en Google Maps
+            </a>
+          </article>
+
+          <!-- Recepción -->
+          <article class="card">
+            <h3 class="card-title">Recepción</h3>
+            <p class="card-text">
+              <strong>Norte 27 #105, Col. Independencia</strong><br />
+              Entre Oriente 1 y Av. del Mazo,<br />
+              Valle de Chalco, Méx.
+            </p>
+            <a
+              href="#"
+              target="_blank"
+              class="btn-link"
+            >
+              Ver en Google Maps
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: ÁLBUM DIGITAL + HASHTAG + CONFIRMACIÓN -->
+    <section id="album-rsvp" class="album-section reveal">
+      <div class="section-inner">
+        <h2 class="section-title">Comparte tus recuerdos</h2>
+        <p class="section-subtitle">
+          Hagamos que los recuerdos de mi día especial duren para siempre.
+          Te invito a compartir las fotos que tomes durante el evento.
+        </p>
+
+        <div class="album-grid">
+          <!-- Hashtag + botones -->
+          <article class="card">
+            <h3 class="card-title">Redes sociales</h3>
+            <p class="card-text">
+              Usa el hashtag oficial:
+            </p>
+            <p class="card-text hashtag">
+              #XVdevalentina2025
+            </p>
+            <p class="card-text">
+              Sube tus fotos a tus redes usando el hashtag para que podamos encontrarlas.
+            </p>
+          </article>
+
+          <!-- Álbum digital -->
+          <article class="card">
+            <h3 class="card-title">Álbum digital</h3>
+            <p class="card-text">
+              También podrás subir tus fotos al álbum digital durante el evento.
+            </p>
+            <a href="#" target="_blank" class="btn-link">
+              Ir al álbum digital
+            </a>
+            <p class="card-text small-note">
+              En la fiesta habrá un código QR impreso para escanear y subir fotos en el momento.
+            </p>
+          </article>
+
+          <!-- Confirmación de asistencia -->
+          <article class="card">
+            <h3 class="card-title">Confirmación de asistencia</h3>
+            <p class="card-text">
+              Favor de confirmar tu asistencia antes del
+              <strong>10 de diciembre de 2025</strong>.
+            </p>
+            <p class="card-text">
+              Teléfono: <strong>5616376328</strong>
+            </p>
+            <a
+              href="https://wa.me/525616376328?text=Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Alejandra%20Valentina"
+              target="_blank"
+              class="btn-link"
+            >
+              Confirmar por WhatsApp
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER / CIERRE -->
+    <footer class="page-footer reveal">
+      <p class="footer-text">
+        Gracias por ser parte de este momento tan especial en mi vida.
+      </p>
+    </footer>
 
   </main>
 
-  <!-- SCRIPT DEL CONTADOR -->
-<script>
-  const eventDate = new Date("2025-12-20T15:30:00");
+  <!-- SCRIPT: CONTADOR + MÚSICA -->
+  <script>
+    const eventDate = new Date("2025-12-20T15:30:00");
 
-  const daysEl = document.getElementById("cd-days");
-  const hoursEl = document.getElementById("cd-hours");
-  const minutesEl = document.getElementById("cd-minutes");
-  const secondsEl = document.getElementById("cd-seconds");
+    const daysEl = document.getElementById("cd-days");
+    const hoursEl = document.getElementById("cd-hours");
+    const minutesEl = document.getElementById("cd-minutes");
+    const secondsEl = document.getElementById("cd-seconds");
 
-  function animateChange(element, newValue) {
-    if (element.textContent === newValue) return;
+    function animateChange(element, newValue) {
+      if (element.textContent === newValue) return;
 
-    element.classList.remove("animate-in");
-    element.classList.add("animate-out");
+      element.classList.remove("animate-in");
+      element.classList.add("animate-out");
 
-    setTimeout(() => {
-      element.textContent = newValue;
-      element.classList.remove("animate-out");
-      element.classList.add("animate-in");
-    }, 250);
-  }
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = eventDate - now;
-
-    if (diff <= 0) {
-      daysEl.textContent = "00";
-      hoursEl.textContent = "00";
-      minutesEl.textContent = "00";
-      secondsEl.textContent = "00";
-      return;
+      setTimeout(() => {
+        element.textContent = newValue;
+        element.classList.remove("animate-out");
+        element.classList.add("animate-in");
+      }, 250);
     }
 
-    const totalSeconds = Math.floor(diff / 1000);
-    const totalMinutes = Math.floor(totalSeconds / 60);
-    const totalHours   = Math.floor(totalMinutes / 60);
-    const days = Math.floor(totalHours / 24);
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
 
-    const hours = totalHours % 24;
-    const minutes = totalMinutes % 60;
-    const seconds = totalSeconds % 60;
+      if (diff <= 0) {
+        ["00", "00", "00", "00"].forEach((v, i) => {
+          [daysEl, hoursEl, minutesEl, secondsEl][i].textContent = v;
+        });
+        return;
+      }
 
-    const d = String(days).padStart(2, "0");
-    const h = String(hours).padStart(2, "0");
-    const m = String(minutes).padStart(2, "0");
-    const s = String(seconds).padStart(2, "0");
+      const totalSeconds = Math.floor(diff / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours   = Math.floor(totalMinutes / 60);
+      const days = Math.floor(totalHours / 24);
 
-    animateChange(daysEl, d);
-    animateChange(hoursEl, h);
-    animateChange(minutesEl, m);
-    animateChange(secondsEl, s);
-  }
+      const hours = totalHours % 24;
+      const minutes = totalMinutes % 60;
+      const seconds = totalSeconds % 60;
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+      const d = String(days).padStart(2, "0");
+      const h = String(hours).padStart(2, "0");
+      const m = String(minutes).padStart(2, "0");
+      const s = String(seconds).padStart(2, "0");
 
-  const audio = document.getElementById("bg-music");
-  const musicBtn = document.getElementById("music-btn");
-
-  let isPlaying = false;
-
-  musicBtn.addEventListener("click", () => {
-    if (!isPlaying) {
-      audio.play();
-      isPlaying = true;
-      musicBtn.classList.add("active");
-    } else {
-      audio.pause();
-      isPlaying = false;
-      musicBtn.classList.remove("active");
+      animateChange(daysEl, d);
+      animateChange(hoursEl, h);
+      animateChange(minutesEl, m);
+      animateChange(secondsEl, s);
     }
-  });
-</script>
 
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const audio = document.getElementById("bg-music");
+    const musicBtn = document.getElementById("music-btn");
+    let isPlaying = false;
+
+    musicBtn.addEventListener("click", () => {
+      if (!isPlaying) {
+        audio.play();
+        isPlaying = true;
+        musicBtn.classList.add("active");
+      } else {
+        audio.pause();
+        isPlaying = false;
+        musicBtn.classList.remove("active");
+      }
+    });
+
+    // =========================
+    // REVEAL POR SCROLL
+    // =========================
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            obs.unobserve(entry.target); // ya no lo vuelve a animar
+          }
+        });
+      },
+      {
+        threshold: 0.2 // se activa cuando el 20% del elemento es visible
+      }
+    );
+
+    revealElements.forEach(el => observer.observe(el));
+
+  </script>
 </body>
 </html>
-
